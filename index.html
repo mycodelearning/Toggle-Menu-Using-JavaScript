@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+
+      header {
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        position: relative;
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: 700;
+        color: white;
+      }
+
+      ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+      }
+
+      @media (max-width: 768px) {
+        ul {
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          background-color: red;
+          width: 40%;
+          padding: 10px 10px;
+          display: none;
+          line-height: 30px;
+          transition: all 0.5s;
+        }
+
+        #btn {
+          display: block !important;
+          padding: 2px 6px;
+        }
+      }
+
+      ul li a {
+        color: white;
+      }
+
+      #btn {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="" class="logo">LOGO</a>
+
+      <button id="btn"><i class="fa-solid fa-bars"></i></button>
+
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </header>
+
+    <script>
+      let btn = document.querySelector("#btn");
+      let ul = document.querySelector("ul");
+      btn.addEventListener("click", function () {
+        if (ul.style.display == "block") {
+          ul.style.display = "none";
+        } else {
+          ul.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>
